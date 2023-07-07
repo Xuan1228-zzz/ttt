@@ -53,11 +53,11 @@ class Users(models.Model):
     uid = models.AutoField(db_column='Uid', primary_key=True)  # Field name made lowercase.
     username = models.CharField(max_length=255, blank=True, null=True)
     password = models.CharField(max_length=255, blank=True, null=True)
-    email = models.CharField(max_length=255, blank=True, null=True)
+    email = models.EmailField(max_length=255, blank=True, null=True)
     phone = models.CharField(max_length=255, blank=True, null=True)
     weight = models.IntegerField(blank=True, null=True)
     height = models.IntegerField(blank=True, null=True)
-    sex = models.CharField(max_length=2,blank=True, null=True)
+    sex = models.CharField(max_length=6,blank=True, null=True)
     birth = models.DateField(blank=True, null=True)
     wallet_addr = models.CharField(max_length=255, blank=True, null=True)
 

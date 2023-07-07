@@ -19,23 +19,25 @@ from django.urls import path
 
 from app01 import views
 
-from rest_framework import routers
-router = routers.DefaultRouter()
-router.register('users', views.UsersView)
-router.register('things', views.ThingsView)
-router.register('eq', views.EqView)
-router.register('exercise', views.ExerciseView)
+# from rest_framework import routers
+# router = routers.DefaultRouter()
+# router.register('users', views.UsersView)
+# router.register('things', views.ThingsView)
+# router.register('eq', views.EqView)
+# router.register('exercise', views.ExerciseView)
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # path('app01/users/', views.UsersView.as_view()),
-    # path('app01/things/', views.ThingsView.as_view()),
-    # path('app01/eq/', views.EqView.as_view()),
-    # path('app01/exercise/', views.ExerciseView.as_view()),
+    path('app01/users/', views.UsersView.as_view()),
+    path('app01/things/', views.ThingsView.as_view()),
+    path('app01/eq/', views.EqView.as_view()),
+    path('app01/exercise/', views.ExerciseView.as_view()),
+
+    path('app01/register/',views.RegisterView.as_view()),
 
 ]
 
-urlpatterns += router.urls
+# urlpatterns += router.urls
